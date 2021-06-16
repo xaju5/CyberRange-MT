@@ -1,0 +1,49 @@
+vnfd:
+  description: VNF with 1 VDU of MySQL for CTF
+  df:
+  - id: default-df
+    instantiation-level:
+    - id: default-instantiation-level
+      vdu-level:
+      - number-of-instances: 1
+        vdu-id: ctfmysqlVM       
+    vdu-profile:
+    - id: ctfmysqlVM  
+      min-number-of-instances: 1 
+  ext-cpd:
+  - id: vnf-ctfmysql-ext
+    int-cpd:
+      cpd: ctf-eth0-int
+      vdu-id: ctfmysqlVM
+  id: CTF_mysqlserver-vnf
+  mgmt-cp: vnf-ctfmysql-ext
+  product-name: CTF_mysqlserver-vnf
+  sw-image-desc:
+  - id: CTF_mysqlserver_snapshot
+    name: CTF_mysqlserver_snapshot
+    image: CTF_mysqlserver_snapshot
+  vdu:
+  - id: ctfmysqlVM
+    cloud-init-file: cloud-config.txt
+    name: ctfmysqlVM
+    sw-image-desc: CTF_mysqlserver_snapshot
+    virtual-compute-desc: ctfmysqlVM-compute
+    virtual-storage-desc:
+    - ctfmysqlVM-storage
+    int-cpd:
+    - id: ctf-eth0-int
+      virtual-network-interface-requirement:
+      - name: ctf-eth0
+        position: 1
+        virtual-interface:
+          type: PARAVIRT        
+  version: '1.0'
+  virtual-compute-desc:
+  - id: ctfmysqlVM-compute
+    virtual-cpu:
+      num-virtual-cpu: "2"
+    virtual-memory:
+      size: "4.0"     
+  virtual-storage-desc:
+  - id: ctfmysqlVM-storage
+    size-of-storage: "40"

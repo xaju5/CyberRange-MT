@@ -1,0 +1,14 @@
+vld:
+- name: mgmtnet
+  vim-network-name: provider-lab
+additionalParamsForVnf:
+- member-vnf-index: mongodb
+  additionalParamsForKdu:
+  - kdu_name: mongodb
+    additionalParams:
+      service:
+        name: mongodb-service
+        type: loadbalancer
+      adminPassword: osm4u
+      configPassword: osm4u
+

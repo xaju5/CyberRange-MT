@@ -1,0 +1,21 @@
+nsd:
+  nsd:
+  - description: Basic NS with 1 VNF and 1 VL
+    df:
+    - id: default-df
+      vnf-profile:
+      - id: '1'
+        virtual-link-connectivity:
+        - constituent-cpd-id:
+          - constituent-base-element-id: '1'
+            constituent-cpd-id: vnf-mgmt-ext
+          virtual-link-profile-id: mgmtnet
+        vnfd-id: basic_2vm-vnf
+    id: basic_2vm-ns
+    name: basic_2vm-ns
+    version: '1.0'
+    virtual-link-desc:
+    - id: mgmtnet
+      mgmt-network: true
+    vnfd-id:
+    - basic_2vm-vnf

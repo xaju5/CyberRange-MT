@@ -1,0 +1,3 @@
+837d9a7d412014858bf50f03fd90e578	mongo_ns/mongo_nsd.yaml
+d069fcbd28ea4d49cbdf301cc3aad5da	mongo_ns/README.md
+a576480e9dbbf42f0f85117abacf3ee6	mongo_ns/params/params.yaml

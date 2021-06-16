@@ -1,0 +1,38 @@
+nsd:
+  nsd:
+  - description: NS with 3 VNF for CTF1 each vnf with one - web,smtp,mysql server
+    df:
+    - id: default-df
+      vnf-profile:
+      - id: '1'
+        virtual-link-connectivity:
+        - constituent-cpd-id:
+          - constituent-base-element-id: '1'
+            constituent-cpd-id: vnf-ctfsmtp-ext
+          virtual-link-profile-id: ctfnet
+        vnfd-id: CTF_smtpserver-vnf
+      - id: '2'
+        virtual-link-connectivity:
+        - constituent-cpd-id:
+          - constituent-base-element-id: '1'
+            constituent-cpd-id: vnf-ctfweb-ext 
+          virtual-link-profile-id: ctfnet
+        vnfd-id: CTF_webserver-vnf
+      - id: '3'
+        virtual-link-connectivity:
+        - constituent-cpd-id:
+          - constituent-base-element-id: '1'
+            constituent-cpd-id: vnf-ctfmysql-ext
+          virtual-link-profile-id: ctfnet
+        vnfd-id: CTF_mysqlserver-vnf
+    id: CTF1_3vnf-ns
+    name: CTF1_3vnf-ns
+    version: '1.0'
+    virtual-link-desc:
+    - id: ctfnet
+      mgmt-network: true
+    vnfd-id:
+    - CTF_smtpserver-vnf
+    - CTF_webserver-vnf
+    - CTF_mysqlserver-vnf
+
