@@ -1,1 +1,0 @@
-fbc9a20372ecaccab25c8191bbc06d74	mongoexpress_knf/mongoexpress_vnfd.yaml

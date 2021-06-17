@@ -1,3 +1,0 @@
-535949e0400f9851c9d47cbc03a5c1e2	mongo1_ns/mongo1_nsd.yaml
-d069fcbd28ea4d49cbdf301cc3aad5da	mongo1_ns/README.md
-d165c7c24d80b4132b251a83c9417158	mongo1_ns/params/params.yaml

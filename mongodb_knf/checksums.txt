@@ -1,1 +1,0 @@
-1469295e86afffcfc5c66f1a3aad7adf	mongodb_knf/mongodb_vnfd.yaml
