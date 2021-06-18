@@ -1,49 +1,49 @@
 vnfd:
-  description: VNF with 1 VDU of MySQL for CTF
+  description: VNF with 1 VDU of Postfix (smtp) for a CTF game
   df:
   - id: default-df
     instantiation-level:
     - id: default-instantiation-level
       vdu-level:
       - number-of-instances: 1
-        vdu-id: ctfsmtpVM       
+        vdu-id: mgmtVM       
     vdu-profile:
-    - id: ctfsmtpVM  
+    - id: mgmtVM  
       min-number-of-instances: 1 
   ext-cpd:
-  - id: vnf-ctfsmtp-ext
+  - id: vnf-mgmt-ext
     int-cpd:
-      cpd: ctf-eth0-int
-      vdu-id: ctfsmtpVM
+      cpd: mgmtVM-eth0-int
+      vdu-id: mgmtVM
   id: CTF_smtpserver-vnf
-  mgmt-cp: vnf-ctfsmtp-ext
+  mgmt-cp: vnf-mgmt-ext
   product-name: CTF_smtpserver-vnf
   sw-image-desc:
   - id: CTF_smtpserver_snapshot
     name: CTF_smtpserver_snapshot
     image: CTF_smtpserver_snapshot
   vdu:
-  - id: ctfsmtpVM
+  - id: mgmtVM
     cloud-init-file: cloud-config.txt
-    name: ctfsmtpVM
+    name: mgmtVM
     sw-image-desc: CTF_smtpserver_snapshot
-    virtual-compute-desc: ctfsmtpVM-compute
+    virtual-compute-desc: mgmtVM-compute
     virtual-storage-desc:
-    - ctfsmtpVM-storage
+    - mgmtVM-storage
     int-cpd:
-    - id: ctf-eth0-int
+    - id: mgmtVM-eth0-int
       virtual-network-interface-requirement:
-      - name: ctf-eth0
+      - name: mgmtVM-eth0
         position: 1
         virtual-interface:
           type: PARAVIRT        
   version: '1.0'
   virtual-compute-desc:
-  - id: ctfsmtpVM-compute
+  - id: mgmtVM-compute
     virtual-cpu:
       num-virtual-cpu: "2"
     virtual-memory:
       size: "4.0"     
   virtual-storage-desc:
-  - id: ctfsmtpVM-storage
+  - id: mgmtVM-storage
     size-of-storage: "40"
