@@ -1,6 +1,6 @@
 nsd:
   nsd:
-    - description: Basic NS with 2 VNF
+    - description: Basic NS with 2 only1_vnf. No internal VL
       df:
         - id: default-df
           vnf-profile:

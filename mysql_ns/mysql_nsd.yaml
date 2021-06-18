@@ -1,6 +1,6 @@
 nsd:
   nsd:
-  - description: NS consisting of a single KNF mysqlknf connected to mgmt network
+  - description: NS of a single KNF stable/mysql-knf connected to mgmt network
     designer: OSM
     df:
     - id: default-df
@@ -11,12 +11,12 @@ nsd:
           - constituent-base-element-id: mysql
             constituent-cpd-id: mgmt-ext
           virtual-link-profile-id: mgmtnet
-        vnfd-id: mysql_knf
-    id: mysql_ns
-    name: mysql_ns
+        vnfd-id: mysql-knf
+    id: mysql-ns
+    name: mysql-ns
     version: '1.0'
     virtual-link-desc:
     - id: mgmtnet
       mgmt-network: 'true'
     vnfd-id:
-    - mysql_knf
+    - mysql-knf

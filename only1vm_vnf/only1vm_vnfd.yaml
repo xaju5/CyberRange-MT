@@ -1,5 +1,5 @@
 vnfd:
-  description: Basic VNF descriptor with 1 VDU connected to a external network
+  description: Basic VNF with 1 apache2 server VDU connected to a external network
   df:
   - id: default-df
     instantiation-level:

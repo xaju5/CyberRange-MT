@@ -1,5 +1,5 @@
 vnfd:
-  description: Basic VNF descriptor w/ 2 VDU connected to an internal VL
+  description: Basic VNF descriptor with 2 ubuntu-focal VDU connected to an internal VL
   df:
   - id: default-df
     instantiation-level:

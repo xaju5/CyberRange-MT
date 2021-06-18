@@ -1,11 +1,11 @@
 vnfd:
-  description: KNF with single KDU using a helm-chart for mysql version 5.7.30
+  description: KNF with single KDU using stable/mysql helm-chart (version 5.7.30)
   df:
   - id: default-df
   ext-cpd:
   - id: mgmt-ext
     k8s-cluster-net: mgmtnet
-  id: mysql_knf
+  id: mysql-knf
   k8s-cluster:
     nets:
     - id: mgmtnet
@@ -13,6 +13,5 @@ vnfd:
   - name: mysql
     helm-chart: stable/mysql
   mgmt-cp: mgmt-ext
-  product-name: mysql_knf
-  provider: Telefonica
+  product-name: mysql-knf
   version: '1.0'

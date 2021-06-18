@@ -1,6 +1,6 @@
 nsd:
   nsd:
-  - description: Basic NS with 1 VNF and 1 VL
+  - description: Basic NS with 1 VNF and 1 internal VL. The VNF has 2 ubuntu-focal VDU
     df:
     - id: default-df
       vnf-profile:
