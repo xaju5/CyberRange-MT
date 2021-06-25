@@ -23,21 +23,21 @@ If the configuration parameters are in a file, use:
 ```
 osm ns-create --ns_name <name> --nsd_name <ns_id-ns> --vim_account <VIM-account-name> --config_file <filename>
 ```
-#NETWORK SERVICES DESCRIPTIONS
+# NETWORK SERVICES DESCRIPTIONS
 All the packages uses a cloud-init configuration for the admin user.
 
-##CTF
+## CTF
 This NS is a Capture The Flag (CTF) game. It consists of a Apache2 server, a Postfix server and a mySQL server.
 
-##Basic_2vm
+## Basic_2vm
 It is a basic NS with just two ubuntu-focal vnfs. There is an internal link that connects both of them.
 
-#only1vm
+# only1vm
 This NS only has one vnf. It is usefull to deploy small standalone services.
 
-#only2vm
+# only2vm
 It uses two only1vm_vnf to create a bigger NS than only1vm_ns. It is similar to basic_2vm_ns but in this case there is not any internal link.
 
-#mysql
+# mysql
 It uses a helm-chart from *stable* to deploy a mySQL server in Kubernetes cluster
 
