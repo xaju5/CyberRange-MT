@@ -5,7 +5,7 @@ The _vnfs are deployed on a Openstack server and the _knfs in a Kubernetes clust
 
 Most of the templates for these packages have been taken from https://osm.etsi.org/gitlab/vnf-onboarding/osm-packages.git
 
-#DEPLOYMENT
+# DEPLOYMENT
 
 To deploy a NS or VNF, download them into a OSM server and run:
 ```
