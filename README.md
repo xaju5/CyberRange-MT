@@ -46,6 +46,5 @@ A NS consisting of 2 VNF. Each of them with an apache2 server and 2 virtual link
 In order to work, it is necessary to clone https://github.com/canonical/operator into `jujuweb_vnf/chams/mycharms/mod/` folder.
 
 ```
-git clone https://github.com/canonical/operator jujuweb_vnf/chams/mycharms/mod/
+git clone https://github.com/canonical/operator jujuweb_vnf/chams/mycharms/mod/operator
 ```
- 
