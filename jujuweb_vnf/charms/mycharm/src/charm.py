@@ -51,12 +51,9 @@ class MyCharm(CharmBase):
         """Start service action."""
 
         if self.model.unit.is_leader():
-            #stderr = None
             try:
                 cmd = ["sudo","service","apache2","start"]
                 stdout = subprocess.run(cmd, check=True, capture_output=True)
-                #proxy = self.get_ssh_proxy()
-                #stdout, stderr = proxy.run(cmd)
                 event.set_results({"output": stdout})
             except Exception as e:
                 event.fail("Action failed {}. Stderr: {}".format(e, stdout))
@@ -67,12 +64,9 @@ class MyCharm(CharmBase):
         """Stop service action."""
 
         if self.model.unit.is_leader():
-            #stderr = None
             try:
                 cmd = ["sudo","service","apache2","stop"]
                 stdout = subprocess.run(cmd, check=True, capture_output=True)
-                #proxy = self.get_ssh_proxy()
-                #stdout, stderr = proxy.run(cmd)
                 event.set_results({"output": stdout})
             except Exception as e:
                 event.fail("Action failed {}. Stderr: {}".format(e, stdout))
