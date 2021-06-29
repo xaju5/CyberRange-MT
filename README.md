@@ -41,3 +41,11 @@ It uses two only1vm_vnf to create a bigger NS than only1vm_ns. It is similar to 
 ### mysql
 It uses a helm-chart from *stable* to deploy a mySQL server in Kubernetes cluster
 
+### jujuweb
+A NS consisting of 2 VNF with an apache2 server. It uses a juju-chart with 3 primitives to touch a file in the VNF, to stop the apache2 service and to start the apache2 service.
+In order to work, it is necessary to clone `https://github.com/canonical/operator` into `jujuweb_vnf/chams/mycharms/mod/` folder.
+
+```
+git clone https://github.com/canonical/operator jujuweb_vnf/chams/mycharms/mod/
+```
+ 
