@@ -1,0 +1,36 @@
+touch:
+  description: "Touch a file on the VNF."
+  params:
+    filename:
+      description: "The name of the file to touch."
+      type: string
+      default: ""
+  required:
+    - filename
+start-service:
+  description: "starts the service of the vnf"
+  params:
+    servicename:
+      description: "The name of the service to start."
+      type: string
+      default: ""
+  required:
+    - servicename
+stop-service:
+  description: "stops the service of the vnf" 
+  params:
+    servicename:
+      description: "The name of the service to stop."
+      type: string
+      default: ""
+  required:
+    - servicename
+install-service:
+  description: "install a service on the vnf" 
+  params:
+    servicename:
+      description: "The name of the service to install."
+      type: string
+      default: ""
+  required:
+    - servicename

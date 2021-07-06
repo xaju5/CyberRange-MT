@@ -1,0 +1,2 @@
+aa54746d9c74068e312889b6e76d19a6	jujucommand_ns/jujucommand_nsd.yaml
+bc681c5a4c3cdc09c013df2d2239f3d2	jujucommand_ns/icons/osm.png

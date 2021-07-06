@@ -1,0 +1,22 @@
+vld:
+- name: mgmtnet
+  vim-network-name: provider-lab
+additionalParamsForVnf:
+- member-vnf-index: mysql
+  additionalParamsForKdu:
+  - kdu_name: mysql
+    additionalParams:
+       #replicaCount: 1 
+      service:
+        type: ClusterIP
+        #loadBalancerIP: '10.98.1.211' # MetalLB IP Address
+      adminPassword: osm4u
+      configPassword: osm4u
+      persistence:
+              existingClaim: mysql-osm-pvc
+      env:
+        MYSQL_ROOT_PASSWORD: "root"
+        MYSQL_DATABASE: "mydatabase"
+        MYSQL_USER: "user1"
+        MYSQL_PASSWORD: "user1"
+

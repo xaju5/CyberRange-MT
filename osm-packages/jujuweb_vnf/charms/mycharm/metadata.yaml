@@ -1,0 +1,8 @@
+name: myjuju-charm
+summary: A juju charm
+description: |
+  juju charm to start or stop an apache2 service
+series:
+  - bionic
+  - xenial
+  - focal

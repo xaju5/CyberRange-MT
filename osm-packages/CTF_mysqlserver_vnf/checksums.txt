@@ -1,0 +1,3 @@
+4f5f43bbf8ba849c7e40b699ce93e90b	CTF_mysqlserver_vnf/CTF_mysqlserver_vnfd.yaml
+9e3f2c4b3cd453a1095004a970cb63c5	CTF_mysqlserver_vnf/cloud_init/cloud-config.txt
+bc681c5a4c3cdc09c013df2d2239f3d2	CTF_mysqlserver_vnf/icons/osm.png
