@@ -1,2 +1,0 @@
-909eaf276201826ab67eab57a5c92127	basic_2vm_ns/basic_2vm_nsd.yaml
-bc681c5a4c3cdc09c013df2d2239f3d2	basic_2vm_ns/icons/osm.png

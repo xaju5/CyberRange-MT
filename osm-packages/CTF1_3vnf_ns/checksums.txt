@@ -1,2 +1,0 @@
-a2f08670a7d781d90734a4566eebab05	CTF1_3vnf_ns/CTF1_3vnf_nsd.yaml
-bc681c5a4c3cdc09c013df2d2239f3d2	CTF1_3vnf_ns/icons/osm.png

@@ -1,2 +1,0 @@
-570c68e619d339298136703393890670	jujuweb_ns/jujuweb_nsd.yaml
-bc681c5a4c3cdc09c013df2d2239f3d2	jujuweb_ns/icons/osm.png

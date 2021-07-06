@@ -1,3 +1,0 @@
-a40fbe15842359c0dfe7214655eed243	basic_2vm_vnf/basic_2vm_vnfd.yaml
-9e3f2c4b3cd453a1095004a970cb63c5	basic_2vm_vnf/cloud_init/cloud-config.txt
-bc681c5a4c3cdc09c013df2d2239f3d2	basic_2vm_vnf/icons/osm.png

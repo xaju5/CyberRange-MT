@@ -1,3 +1,0 @@
-6cffd2fa38ac5eefc38d5423820350a1	only1vm_vnf/only1vm_vnfd.yaml
-9e3f2c4b3cd453a1095004a970cb63c5	only1vm_vnf/cloud_init/cloud-config.txt
-bc681c5a4c3cdc09c013df2d2239f3d2	only1vm_vnf/icons/osm.png

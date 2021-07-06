@@ -1,1 +1,0 @@
-5f1a9f1e3197ce60bf73c3cd53babab8	mysql_knf/mysql_vnfd.yaml

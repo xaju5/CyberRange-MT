@@ -1,3 +1,0 @@
-77ed9a1d621ae23c328bb509d1074b0c	CTF_webserver_vnf/CTF_webserver_vnfd.yaml
-9e3f2c4b3cd453a1095004a970cb63c5	CTF_webserver_vnf/cloud_init/cloud-config.txt
-bc681c5a4c3cdc09c013df2d2239f3d2	CTF_webserver_vnf/icons/osm.png

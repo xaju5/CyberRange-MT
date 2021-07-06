@@ -1,2 +1,0 @@
-7d676a0975d097482075e2a41ba54d40	only1vm_ns/only1vm_nsd.yaml
-bc681c5a4c3cdc09c013df2d2239f3d2	only1vm_ns/icons/osm.png
