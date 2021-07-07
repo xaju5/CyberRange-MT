@@ -5,9 +5,11 @@ public class ProgramLogic {
 	private final String flag1u, flag1p, flag2, flag3u, flag3p, flag4;
 	private final String resul1u = "admin", resul1p = "admin", resul2 = "volume secret key",
 			resul3u = "ubuntu", resul3p = "osm4u", resul4 = "k8s secret key";
+	private final String username;
 	
 	//Initialize with given values
-	public ProgramLogic(String flag1u, String flag1p, String flag2, String flag3u, String flag3p, String flag4) {
+	public ProgramLogic(String username, String flag1u, String flag1p, String flag2, String flag3u, String flag3p, String flag4) {
+		this.username = username;
 		this.flag1u = flag1u;
 		this.flag1p = flag1p;
 		this.flag2 = flag2;
@@ -18,6 +20,7 @@ public class ProgramLogic {
 	
 	//If there are not values, initialize with null
 	public ProgramLogic() {
+		this.username = null;
 		this.flag1u = null;
 		this.flag1p = null;
 		this.flag2 = null;
@@ -27,7 +30,7 @@ public class ProgramLogic {
 	}
 	
 	//Checks how much score does the user gets
-	public int checkResults() {
+	public String checkResults() {
 		
 		int score = 0;
 		
@@ -45,7 +48,7 @@ public class ProgramLogic {
 		if(flag4.equals(resul4))
 			score++;
 		
-		return score;
+		return Integer.toString(score);
 	}
 
 }

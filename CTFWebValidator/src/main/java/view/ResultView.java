@@ -5,17 +5,19 @@ import java.io.PrintWriter;
 
 public class ResultView implements View{
 
-	public void print(PrintWriter pw, int score) {
+	public void print(PrintWriter pw, String score, String username) {
 
 		pw.println(Utilities.DOCTYPE);
-		pw.println(Utilities.headConTitleStyle("Form submited","css/style.css"));
-		pw.println("<body>");
-		pw.println("<h1>Your score is: "+score+"</h1>");
-		pw.println("<brn>");
-		pw.println("<brn>");
-		pw.println("<brn>");
+		pw.println(Utilities.STARTBODY);
+		pw.println(Utilities.head("Form submited","css/style.css","css/bootstrap.min.css"));
+		pw.println(Utilities.header());
+		pw.println(Utilities.classTitle("Your score"));
+		pw.println(Utilities.columText("Username:",username,""));
+		pw.println(Utilities.columText("Your score is:",score,""));
+		pw.println(Utilities.CLASSEND);
 		
-		pw.println(Utilities.botonUrl("validation.html", "repeat form"));
+		
+		//pw.println(Utilities.botonUrl("validation.html", "repeat form"));
 		
 		pw.println(Utilities.FIN);
 	}

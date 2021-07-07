@@ -39,6 +39,7 @@ public class FormController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String username = request.getParameter("username");
 		String flag1u = request.getParameter("flag1u");
 		String flag1p = request.getParameter("flag1p");
 		String flag2 = request.getParameter("flag2");
@@ -46,20 +47,20 @@ public class FormController extends HttpServlet {
 		String flag3p = request.getParameter("flag3p");
 		String flag4 = request.getParameter("flag4");
 		
-		ProgramLogic pl = new ProgramLogic(flag1u, flag1p, flag2, flag3u, flag3p, flag4);
-		int score = pl.checkResults();
+		ProgramLogic pl = new ProgramLogic(username, flag1u, flag1p, flag2, flag3u, flag3p, flag4);
+		String score = pl.checkResults();
 		
-		formResponse(response, new ResultView(),score);
+		formResponse(response, new ResultView(),score, username);
 	}
 	
-private void formResponse(HttpServletResponse response, ResultView view, int score) {
+private void formResponse(HttpServletResponse response, ResultView view, String score, String username) {
 		
 		response.setContentType("text/html");
 		PrintWriter out;
 		
 		try {
 			out = response.getWriter();
-			view.print(out,score);
+			view.print(out,score, username);
 			out.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
