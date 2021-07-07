@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.ProgramLogic;
+import view.ReportView;
 import view.ResultView;
 
 /**
@@ -31,8 +32,10 @@ public class FormController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		ProgramLogic pl = new ProgramLogic();
+		String [][] arraytext = pl.readCSV();
+		int csvArrayLenght = pl.getCsvArrayLenght();
+		reviewResponse(response, new ReportView(),arraytext,csvArrayLenght);
 	}
 
 	/**
@@ -49,11 +52,12 @@ public class FormController extends HttpServlet {
 		
 		ProgramLogic pl = new ProgramLogic(username, flag1u, flag1p, flag2, flag3u, flag3p, flag4);
 		String score = pl.checkResults();
+		pl.saveCSV();
 		
 		formResponse(response, new ResultView(),score, username);
 	}
 	
-private void formResponse(HttpServletResponse response, ResultView view, String score, String username) {
+	private void formResponse(HttpServletResponse response, ResultView view, String score, String username) {
 		
 		response.setContentType("text/html");
 		PrintWriter out;
@@ -67,5 +71,20 @@ private void formResponse(HttpServletResponse response, ResultView view, String 
 			e.printStackTrace();
 		}
 	}
+	
+	private void reviewResponse(HttpServletResponse response, ReportView view,String[][] arraytext,int csvArrayLenght) {
+	
+		response.setContentType("text/html");
+		PrintWriter out;
+		
+		try {
+			out = response.getWriter();
+			view.print(out, arraytext, csvArrayLenght);
+			out.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+}
 
 }

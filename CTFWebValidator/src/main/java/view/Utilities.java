@@ -91,5 +91,18 @@ public class Utilities {
 		return str.toString();
 		
 	}
+	
+	public static String copyright() {
+		
+		StringBuilder str = new StringBuilder();
+		str.append("<div class=\"copyright\">\n");
+		str.append("<div class=\"container\">\n");
+		str.append("<p>© 2021 All Rights Reserved.\n");
+		str.append(" Design template based on\n");
+		str.append("<a href=\"https://www.free-css.com/free-css-templates/page264/moon\"> free-css.com</a></p>\n");
+		str.append("</div></div>");
+		
+		return str.toString();
+	}
 
 }
