@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>CTF Web Validator</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="Xabier">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<!-- body -->
+
+<body class="main-layout ">
+
+    <!-- header -->
+    <header>
+        <!-- header inner -->
+        <div class="header">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col logo_section">
+                        <div class="full">
+                            <div class="center-desk">
+                                <div class="logo">
+                                    <a href="validation.html"><img src="images/logo.png" alt="#"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 location_icon_bottum">
+                        <div class="row">
+                            <div class="col-md-8 ">
+                                <div class="menu-area">
+                                    <div class="limit-box">
+                                        <nav class="main-menu">
+                                            <ul class="menu-area-main">
+                                                <li class="active"> <a href="validation.html">About</a> </li>
+                                                <li><a href="#1exer">1st exercise</a></li>
+                                                <li><a href="#2exer">2nd exercise</a></li>
+                                                <li><a href="#3exer">3rd exercise</a></li>
+                                                <li><a href="#4exer">4th exercise</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end header inner -->
+    </header>
+    <!-- end header -->
+    <section class="slider_section">
+        <div id="myCarousel" class="carousel slide banner-main" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="first-slide" src="images/banner.jpg" alt="First slide">
+                    <div class="container">
+                        <div class="carousel-caption relative">
+                            <h1>CYBER RANGE</h1>
+                            <span>a Capture The Flag Game</span>
+                            <p>Complete the exercises and validate the flags</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- 1exer -->
+    <form action="FormController" method="post">
+    <div id="1exer" class="about">
+        <!-- exerTitle -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="title">
+                        <h2>Exercises</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <!-- exerTitle -->
+    
+        <div class="container">
+            <div class="row">
+
+                <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
+                    <div class="about_box">
+                        <h2>First exercise<br><strong class="black">Sniffing attack</strong></h2>
+                        <p>Capture traffic between OSM and a client to obtain user credentials. </p>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
+                	<h3>Insert Flag:</h3>
+                	<p>User: </p>
+  					<input id="flag1u" type="text" name="flag1u">
+  					<p>Password: </p>
+  					<input id="flag1p" type="text" name="flag1p">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end 1exer -->
+
+    <!-- 2exer -->
+    <div id="2exer" class="about">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
+                    <div class="about_box">
+                        <h2>Second exercise<br><strong class="black">Man in the middle attack</strong></h2>
+                        <p>Capture traffic between OSM and Openstack. Try to steal a volume from a VNF.</p>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
+                	<h3>Insert Flag:</h3>
+                	<p>File value: </p>
+  					<input id="flag2" type="text" name="flag2">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end 2exer -->
+
+    <!-- 3exer -->
+    <div id="3exer" class="about">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
+                    <div class="about_box">
+                        <h2>Third exercise<br><strong class="black">Juju charm attack</strong></h2>
+                        <p>Use a Juju charm to access a VNF and steal the admin password.</p>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
+                	<h3>Insert Flag:</h3>
+                	<p>User: </p>
+  					<input id="flag3u" type="text" name="flag3u">
+  					<p>Password: </p>
+  					<input id="flag3p" type="text" name="flag3p">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end 3exer -->
+
+    <!-- 4exer -->
+    <div id="4exer" class="about">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">
+                    <div class="about_box">
+                        <h2>Fourth exercise <br><strong class="black">Helm charm attack</strong></h2>
+                        <p>Use a Helm charm to gain privilege escalation and steal one data from the host.</p>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
+                	<h3>Insert Flag:</h3>
+                	<p>File value: </p>
+  					<input id="flag4" type="text" name="flag4">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- exerButtons -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 col-lg-5 col-md-5 co-sm-l2">		
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-7 co-sm-l2">
+ 					<input type ="submit" value="Submit" class="submit-btn">
+                </div>
+            </div>
+        </div>
+    <!-- exerButtons-->
+    </form>    
+<br>
+    <!--  footer -->
+    <footer>
+        <div class="footer top_layer ">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                        <div class="address">
+                            <a href="validation.html"> <img src="images/logo.png" alt="logo" /></a>
+                            <p>This section is completely lacking in functionality. The buttons are fake and do not give any results. </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                        <div class="address">
+                            <h3>Quick links</h3>
+                            <ul class="Links_footer">
+                                <li><img src="icon/3.png" alt="#" /> <a href="#">Maintenance</a> </li>
+                                <li><img src="icon/3.png" alt="#" /> <a href="#">Language Packs</a> </li>
+                                <li><img src="icon/3.png" alt="#" /> <a href="#">LearnPress</a> </li>
+                                <li><img src="icon/3.png" alt="#" /> <a href="#">Release Status</a> </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                        <div class="address">
+                            <h3>Contact email</h3>
+                            <p> If you need help contact our manager in the following email</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                        <div class="address">
+                            <h3>Manager info</h3>
+                            <ul class="loca">
+                                <li>
+                                    <a href="#"><img src="icon/email.png" alt="#" /></a>manager@ctfmail.org
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div class="container">
+                <p>© 2021 All Rights Reserved. Design template based on<a href="https://www.free-css.com/free-css-templates/page264/moon"> free-css.com</a></p>
+
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
