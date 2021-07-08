@@ -46,8 +46,8 @@ In order to work, it is necessary to clone https://github.com/canonical/operator
 ### jujucommand
 A NS consisting of 2 VNF. Each of them with server and 2 virtual links (1 internal and 1 external). It uses a juju-chart with 4 primitives: to touch a file in the VNF, to stop a service, to start a service and to install a service.  It is up to the user to determine which service to install, start or stop. To do this, the user needs to specify the service when executing the `osm ns-action` command or when executing a primitive from the OSM web page.  
 This NS will automaticaly install an apache2 service with a day1 primitive.  
-In order to work, it is necessary to clone https://github.com/canonical/operator into `jujuweb_vnf/chams/mycharms/mod/` folder.
+In order to work, it is necessary to clone https://github.com/canonical/operator into `jujucommand_vnf/chams/mycharms/mod/` folder.
 
 ```
-git clone https://github.com/canonical/operator jujuweb_vnf/chams/mycharms/mod/operator
+git clone https://github.com/canonical/operator jujucommand_vnf/chams/mycharms/mod/operator
 ```
