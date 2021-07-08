@@ -7,7 +7,7 @@ public class ProgramLogic {
 	private final String flag1u, flag1p, flag2, flag3u, flag3p, flag4;
 	private final String resul1u = "admin", resul1p = "admin", resul2 = "volume secret key",
 			resul3u = "ubuntu", resul3p = "osm4u", resul4 = "k8s secret key";
-	private final String username, PATH = "workspace/CTFWebValidator/data.csv";	
+	private final String username, path;	
 	
 	private String score;
 	private int csvArrayLenght, csvLineLength = 2;
@@ -21,6 +21,9 @@ public class ProgramLogic {
 		this.flag3u = flag3u;
 		this.flag3p = flag3p;
 		this.flag4 = flag4;
+		
+		String currentUsersHomeDir = System.getProperty("user.home");
+		this.path = currentUsersHomeDir + "/data.csv";
 	}
 	
 	//If there are not values, initialize with null
@@ -32,6 +35,9 @@ public class ProgramLogic {
 		this.flag3u = null;
 		this.flag3p = null;
 		this.flag4 = null;
+		
+		String currentUsersHomeDir = System.getProperty("user.home");
+		this.path = currentUsersHomeDir + "/data.csv";
 	}
 	
 	//Checks how much score does the user gets
@@ -61,7 +67,7 @@ public class ProgramLogic {
 		boolean overwrite = true;
 		String line = username + "," + score + "\n";
 		
-        FileWR write = new FileWR(PATH, overwrite);
+        FileWR write = new FileWR(path, overwrite);
         write.writeString(line);
         write.closeWriter();
 		
@@ -69,7 +75,7 @@ public class ProgramLogic {
 	
 	public String[][] readCSV() {
 		
-		FileWR read = new FileWR(PATH);
+		FileWR read = new FileWR(path);
 		String line;
 				
 		ArrayList<String> csvtext = new ArrayList<String>();
