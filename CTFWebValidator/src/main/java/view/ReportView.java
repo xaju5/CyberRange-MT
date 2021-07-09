@@ -6,37 +6,26 @@ public class ReportView implements View {
 
 	public void print(PrintWriter pw, String[][] arraytext,int csvArrayLenght) {
 
+		String values[] = {"Back to Test"};
+		String href[] = {"validation.html"};
+		int numValues = 1;
+		
+		//head
 		pw.println(Utilities.DOCTYPE);
-		pw.println(Utilities.STARTBODY);
 		pw.println(Utilities.head("Report","css/style.css","css/bootstrap.min.css"));
+		
+		//header
+		pw.println(Utilities.STARTBODY);
 		pw.println(Utilities.header());
-		pw.println(Utilities.classTitle("Users Report"));
+		pw.println(Utilities.headButtons(numValues, values,href));
 		
-		pw.println("<div class= table>");
-		pw.println("<div class=\"container\">\n");
-		pw.println("<div class=\"row\">\n");
-		pw.println("<div class=\"col-md-12\">\n");
-		pw.println("<table>\n");
-		pw.println("<tr>\n");
-		pw.println("<th>Name</th>\n<th>Score</th>\n");
-		pw.println("</tr>\n");
-		
-		int csvLineLength = 2;
-		for(int i=0; i<csvArrayLenght;i++){
-			pw.println("<tr>\n");
-			
-			for(int j = 0; j < csvLineLength; j++) {
-				pw.println("<td>");
-				pw.println(arraytext[i][j]);
-				pw.println("</td>\n");
-			}
-			pw.println("</tr>\n");
-		}
-		pw.println("</table>");
-		pw.println("</div></div></div></div>");
-
+		//Table
+		pw.println(Utilities.classTitle("Users Report"));		
+		pw.println(Utilities.table(arraytext, csvArrayLenght));
 		pw.println(Utilities.CLASSEND);
-		pw.println(Utilities.copyright());
+		
+		//footer
+		pw.println(Utilities.footer(numValues, values,href));
 		pw.println(Utilities.FIN);
 	}
 	
