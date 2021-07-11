@@ -1,0 +1,48 @@
+image:
+  name: sickp/alpine-sshd
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: LoadBalancer
+  port: 22
+  extport: 32222
+  annotations: {}
+
+persistence:
+  enabled: true
+  pvname: hackssh-etc-pv
+  pvcname: hackssh-etc-pvc
+  hostPath: "/etc"
+  podPath: "/root/hostfolder"
+
+# Add usernames to create users
+extraEnvs:
+  USER: user1
+
+# Add username as key and public key as value
+users:
+  dummy: user1
+
+# Reqiured: Add your Openssh-bastion Private Key
+host:
+  keys: ""
+
+
+## Configure resource requests and limits
+## ref: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/
+resources:
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  requests:
+    cpu: 20m
+    memory: 50Mi
+
+podAnnotations: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

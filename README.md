@@ -12,4 +12,4 @@ It consists of 3 pages: a validation page to fill out a form, a score page to vi
 
 ### helm-charts
 
-A collection of helm-chart with major vulnerabilities. The goal of these helm-charts is to test a provilege escalation on a Kubernetes cluster.
+A openssh helm-chart with major vulnerabilities. The goal of this helm-charts is to test a provilege escalation on a Kubernetes cluster. For that purpouse, it uses a wrong configured hostpath volume to gain access to the host of the running Kubernetes pod. Be careful when installing it!
