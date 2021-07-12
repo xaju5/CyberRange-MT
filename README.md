@@ -8,7 +8,8 @@ A collection of Virtualized Network Functions (VNF) and Network Services (NS) de
 ### CTFWebValidator
 
 An Eclipse Dinamic Web project for the validation of the cyber range exercises. I run it on a 8.5 Apache Tomcat server, but it may work for another type of web server.  
-It consists of 3 pages: a validation page to fill out a form, a score page to view the test results, and a results page that lists the scores of all users. 
+It consists of 3 pages: a validation page to fill out a form, a score page to view the test results, and a results page that lists the scores of all users.  
+Download the CTFWebValidator.war file and deploy it on a Tomcat server to run the application.
 
 ### helm-charts
 
