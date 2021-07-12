@@ -84,15 +84,16 @@ public static String headButtons(int numValues, String [] values, String [] href
 	public static String columText(String title, String subtitle, String text) {
 		
 		StringBuilder str = new StringBuilder();
+		//str.append("<div class=\"about\">\n");
 		str.append("<div class=\"container\">\n");
 		str.append("<div class=\"row\">\n");
-		str.append("<div class=\"col-md-12\">\n");
+		str.append("<div class=\"col-xl-5 col-lg-5 col-md-5 co-sm-l2\">\n");
 		str.append("<div class=\"about_box\">\n");
-		str.append("<h3>");
+		str.append("<h2>");
 		str.append(title);
 		str.append("<br><strong class=\"black\">");
 		str.append(subtitle);
-		str.append("</strong></h3>\n");
+		str.append("</strong></h2>\n");
 		str.append("<p>");
 		str.append(text);
 		str.append("</p>\n");
@@ -100,7 +101,7 @@ public static String headButtons(int numValues, String [] values, String [] href
 		return str.toString();	
 	}
 	
-	public static String table(String[][] arraytext,int csvArrayLenght) {
+	public static String table(String[][] arraytext,int csvArrayLenght,int csvLineLength) {
 		
 		StringBuilder str = new StringBuilder();
 		str.append("<div class= table>");
@@ -109,10 +110,9 @@ public static String headButtons(int numValues, String [] values, String [] href
 		str.append("<div class=\"col-md-12\">\n");
 		str.append("<table>\n");
 		str.append("<tr>\n");
-		str.append("<th>Name</th>\n<th>Score</th>\n");
+		str.append("<th>Name</th><th>Total Score</th><th>Exercise 1</th><th>Exercise 2</th><th>Exercise 3</th><th>Exercise 4</th>\n");
 		str.append("</tr>\n");
 
-		int csvLineLength = 2;
 		for(int i=0; i<csvArrayLenght;i++){
 			str.append("<tr>\n");
 			

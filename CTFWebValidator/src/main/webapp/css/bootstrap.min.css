@@ -1495,6 +1495,8 @@ width:100%;
 max-width:100%;
 margin-bottom:1rem;
 background-color:transparent;
+margin-left: 20px;
+margin-right: 20px;
 }
 
 .table td,.table th {

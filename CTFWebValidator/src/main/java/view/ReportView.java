@@ -4,7 +4,7 @@ import java.io.PrintWriter;
 
 public class ReportView implements View {
 
-	public void print(PrintWriter pw, String[][] arraytext,int csvArrayLenght) {
+	public void print(PrintWriter pw, String[][] arraytext,int csvArrayLenght,int csvLineLength) {
 
 		String values[] = {"Back to Test"};
 		String href[] = {"validation.html"};
@@ -21,7 +21,7 @@ public class ReportView implements View {
 		
 		//Table
 		pw.println(Utilities.classTitle("Users Report"));		
-		pw.println(Utilities.table(arraytext, csvArrayLenght));
+		pw.println(Utilities.table(arraytext, csvArrayLenght,csvLineLength));
 		pw.println(Utilities.CLASSEND);
 		
 		//footer

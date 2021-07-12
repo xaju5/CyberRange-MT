@@ -21,7 +21,7 @@ public class ResultView implements View{
 		
 		//Scores
 		pw.println(Utilities.classTitle("Your score"));
-		pw.println(Utilities.columText("Username:",username,""));
+		pw.println(Utilities.columText("Your name is:",username,""));
 		pw.println(Utilities.columText("Your score is:",score,""));
 		pw.println(Utilities.CLASSEND);
 		
