@@ -1,0 +1,72 @@
+vnfd:
+  description: VNF descriptor with 2 ubuntu-focal VDUs
+  df:
+  - id: default-df
+    instantiation-level:
+    - id: default-instantiation-level
+      vdu-level:
+      - number-of-instances: 1
+        vdu-id: attackerVM
+      - number-of-instances: 1
+        vdu-id: volumeVM
+    vdu-profile:
+    - id: attackerVM
+      min-number-of-instances: 1
+    - id: volumeVM
+      min-number-of-instances: 1
+  ext-cpd:
+  - id: vnf-mgmt-ext
+    int-cpd:
+      cpd: attackerVM-eth0-int
+      vdu-id: attackerVM
+  id: exercise2-vnf
+  mgmt-cp: vnf-mgmt-ext
+  product-name: exercise2-vnf
+  sw-image-desc:
+  - id: ubuntu-focal
+    image: ubuntu-focal
+    name: ubuntu-focal
+  vdu:
+  - id: attackerVM
+    int-cpd:
+    - id: attackerVM-eth0-int
+      virtual-network-interface-requirement:
+      - name: attackerVM-eth0
+        position: 1
+        virtual-interface:
+          type: PARAVIRT
+    name: attackerVM
+    sw-image-desc: ubuntu-focal
+    virtual-compute-desc: attackerVM-compute
+    virtual-storage-desc:
+    - attackerVM-storage
+  - id: volumeVM
+    int-cpd:
+    - id: attackerVM-eth0-int
+      virtual-network-interface-requirement:
+      - name: attackerVM-eth0
+        position: 1
+        virtual-interface:
+          type: PARAVIRT
+    name: volumeVM
+    sw-image-desc: ubuntu-focal
+    virtual-compute-desc: volumeVM-compute
+    virtual-storage-desc:
+    - volumeVM-storage
+  version: '1.0'
+  virtual-compute-desc:
+  - id: attackerVM-compute
+    virtual-memory:
+      size: 1.0
+    virtual-cpu:
+      num-virtual-cpu: 1
+  - id: volumeVM-compute
+    virtual-memory:
+      size: 1.0
+    virtual-cpu:
+      num-virtual-cpu: 1
+  virtual-storage-desc:
+  - id: attackerVM-storage
+    size-of-storage: 10
+  - id: volumeVM-storage
+    size-of-storage: 10

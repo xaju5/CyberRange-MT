@@ -1,0 +1,8 @@
+name: myjuju-charm
+summary: A juju charm
+description: |
+  juju charm to start or stop a service
+series:
+  - bionic
+  - xenial
+  - focal

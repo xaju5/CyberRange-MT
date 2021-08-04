@@ -1,0 +1,37 @@
+nsd:
+  nsd:
+  - description: NS of a scenario for a cyber-range and a CTF competition. it has 3 VNFs, one for each exercise. 
+    df:
+    - id: default-df
+      vnf-profile:
+      - id: '1'
+        virtual-link-connectivity:
+        - constituent-cpd-id:
+           - constituent-base-element-id: '1'
+             constituent-cpd-id: vnf-mgmt-ext
+          virtual-link-profile-id: mgmtnet
+        vnfd-id: exercise2-vnf
+      - id: '2'
+        virtual-link-connectivity:
+        - constituent-cpd-id:
+          - constituent-base-element-id: '2'
+            constituent-cpd-id: vnf-mgmt-ext
+          virtual-link-profile-id: mgmtnet
+        vnfd-id: exercise3-vnf
+      - id: '3'
+        virtual-link-connectivity:
+        - constituent-cpd-id:
+          - constituent-base-element-id: '3'
+            constituent-cpd-id: mgmt-ext
+          virtual-link-profile-id: mgmtnet
+        vnfd-id: exercise4-knf
+    id: scenario-ns
+    name: scenario-ns
+    version: '1.0'
+    virtual-link-desc:
+    - id: mgmtnet
+      mgmt-network: 'true'
+    vnfd-id:
+    - exercise2-vnf
+    - exercise3-vnf
+    - exercise4-knf

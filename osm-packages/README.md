@@ -41,13 +41,25 @@ It uses a helm-chart from *stable* to deploy a mySQL server in Kubernetes cluste
 
 ### jujuweb
 A NS consisting of 2 VNF. Each of them with an apache2 server and 2 virtual links (1 internal and 1 external). It uses a juju-chart with 3 primitives: to touch a file in the VNF, to stop the apache2 service and to start the apache2 service.  
-In order to work, it is necessary to clone https://github.com/canonical/operator into `jujuweb_vnf/chams/mycharms/mod/` folder.
+In order to work, it is necessary to clone https://github.com/canonical/operator into `jujuweb_vnf/charms/mycharms/mod/` folder.
 
 ### jujucommand
 A NS consisting of 2 VNF. Each of them with server and 2 virtual links (1 internal and 1 external). It uses a juju-chart with 4 primitives: to touch a file in the VNF, to stop a service, to start a service and to install a service.  It is up to the user to determine which service to install, start or stop. To do this, the user needs to specify the service when executing the `osm ns-action` command or when executing a primitive from the OSM web page.  
 This NS will automaticaly install an apache2 service with a day1 primitive.  
-In order to work, it is necessary to clone https://github.com/canonical/operator into `jujucommand_vnf/chams/mycharms/mod/` folder.
+In order to work, it is necessary to clone https://github.com/canonical/operator into `jujucommand_vnf/charms/mycharms/mod/` folder.
+```
+git clone https://github.com/canonical/operator jujucommand_vnf/charms/mycharms/mod/operator
+```
 
+### scenario_ns
+This NS consist of a scenario for a cyber-range and a CTF competition. it has 3 VNFs, one for each exercise.   
+##### exercise2_vnf
+A VNF descriptor with 2 ubuntu-focal VDUs. One is the attacker and the other is the VDU needed for the exercise.
+##### exercise3_vnf
+A VNF consisting of a VDU with a juju charm. It is the same as jujucommand but with only one virtual link.  
+In order to work, it is necessary to clone https://github.com/canonical/operator into `jujucommand_vnf/charms/mycharms/mod/` folder.
 ```
-git clone https://github.com/canonical/operator jujucommand_vnf/chams/mycharms/mod/operator
+git clone https://github.com/canonical/operator jujucommand_vnf/charms/mycharms/mod/operator
 ```
+##### exercise4_vnf
+A KNF with a single KDU using a customized helm-chart. This helm-chart is hackssh, which can be found in `CyberRange-MT/helm-charts/hackssh`

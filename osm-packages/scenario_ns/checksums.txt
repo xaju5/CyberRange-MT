@@ -1,0 +1,2 @@
+d9475d8bc36c2adf295c179ff3099f2b	scenario_ns/scenario_nsd.yaml
+bc681c5a4c3cdc09c013df2d2239f3d2	scenario_ns/icons/osm.png

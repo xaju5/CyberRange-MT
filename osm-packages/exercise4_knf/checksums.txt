@@ -1,0 +1,1 @@
+8ddaf293cd83d6e26a1662cfa7b168a2	exercise4_knf/exercise4_vnfd.yaml

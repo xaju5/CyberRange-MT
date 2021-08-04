@@ -1,0 +1,102 @@
+vnfd:
+  description: A VNF consisting of a VDU with a juju charm
+  df:
+  - id: default-df
+    instantiation-level:
+    - id: default-instantiation-level
+      vdu-level:
+      - number-of-instances: 1
+        vdu-id: jujuVM
+    vdu-profile:
+    - id: jujuVM
+      min-number-of-instances: 1
+    lcm-operations-configuration:
+      operate-vnf-op-config:
+        day1-2:
+        - config-access:
+            ssh-access:
+              default-user: ubuntu
+              required: true
+          config-primitive:
+          - name: touch
+            execution-environment-ref: mycharm-ee
+            parameter:
+            - data-type: STRING
+              default-value: /home/ubuntu/touched
+              name: filename
+          - name: start-service
+            execution-environment-ref: mycharm-ee
+            parameter:
+            - data-type: STRING
+              default-value: apache2 
+              name: servicename      
+          - name: stop-service
+            execution-environment-ref: mycharm-ee   
+            parameter:
+            - data-type: STRING
+              default-value: apache2 
+              name: servicename     
+          - name: install-service
+            execution-environment-ref: mycharm-ee
+            parameter:
+            - data-type: STRING
+              default-value: apache2 
+              name: servicename       
+          id: jujuVM
+          execution-environment-list:
+          - id: mycharm-ee
+            juju:
+              charm: mycharm
+              proxy: false
+          initial-config-primitive:
+          - name: touch
+            execution-environment-ref: mycharm-ee
+            parameter:
+            - data-type: STRING
+              name: filename
+              value: /home/ubuntu/first-touch
+            seq: 1
+          - name: install-service
+            execution-environment-ref: mycharm-ee
+            parameter:
+            - data-type: STRING
+              value: apache2 
+              name: servicename      
+            seq: 2  
+  ext-cpd:
+  - id: vnf-mgmt-ext
+    int-cpd:
+      cpd: jujuVM-eth0-int
+      vdu-id: jujuVM
+  id: exercise3-vnf
+  mgmt-cp: vnf-mgmt-ext
+  product-name: exercise3-vnf
+  sw-image-desc:
+  - id: ubuntu-focal
+    image: ubuntu-focal
+    name: ubuntu-focal
+  vdu:
+  - cloud-init-file: cloud-config.txt
+    id: jujuVM
+    int-cpd:
+    - id: jujuVM-eth0-int
+      virtual-network-interface-requirement:
+      - name: jujuVM-eth0
+        position: 1
+        virtual-interface:
+          type: PARAVIRT
+    name: jujuVM
+    sw-image-desc: ubuntu-focal
+    virtual-compute-desc: jujuVM-compute
+    virtual-storage-desc:
+    - jujuVM-storage
+  version: 1.0
+  virtual-compute-desc:
+  - id: jujuVM-compute
+    virtual-cpu:
+      num-virtual-cpu: 2
+    virtual-memory:
+      size: 4.0
+  virtual-storage-desc:
+  - id: jujuVM-storage
+    size-of-storage: 40
