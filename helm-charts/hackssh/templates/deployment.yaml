@@ -1,0 +1,90 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "hackssh.fullname" . }}
+  labels:
+    {{ include "hackssh.labels" . | indent 4 | trim }}
+spec:
+  revisionHistoryLimit: {{ .Values.revisionHistoryLimit | default 0 }}
+  selector:
+    matchLabels:
+      {{ include "hackssh.selector" . | indent 6 | trim }}
+  template:
+    metadata:
+      labels:
+        {{ include "hackssh.selector" . | indent 8 | trim }}
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{ toYaml . | indent 8 | trim }}
+      {{- end }}
+    spec:
+    {{- if .Values.image.pullSecrets }}
+      imagePullSecrets:
+      {{- range .Values.image.pullSecrets }}
+        - name: {{ . }}
+      {{- end }}
+    {{- end }}      
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+        {{- with .Values.extraEnvs }}
+          env:
+          {{- range $key, $value := . }}
+            - name: {{ $key }}
+              value: {{ $value | quote }}
+          {{- end }}
+        {{- end }}
+          ports:
+            - name: ssh
+              containerPort: {{ .Values.service.port }} 
+        {{- with .Values.resources }}
+          resources:
+            {{ toYaml . | indent 12 | trim }}
+        {{- end }}
+        {{- with .Values.users }}
+          volumeMounts:
+          {{ range $key, $value := . }}
+            - name: keys
+              mountPath: /keys/{{ $key }}
+              subPath: {{ $key }}
+            - name: keys
+              mountPath: /home/{{ $key }}/.ssh/authorized_keys
+              subPath: {{ $key }}
+          {{- end }}
+        {{- end }}
+            - name: private
+              mountPath: /etc/ssh/ssh_host_rsa_key
+              subPath: ssh_host_rsa_key
+           {{- if .Values.persistence.enabled }}   
+            - name: etc-storage
+              mountPath: {{ .Values.persistence.podPath }}
+           {{- end }}   
+      volumes:
+      - name: keys
+        secret:
+          secretName: {{ include "hackssh.fullname" . }}-authorized
+      - name: private
+        secret:
+          secretName: {{ include "hackssh.fullname" .  }}-private
+          defaultMode: 0600
+
+{{- if .Values.persistence.enabled }}
+      - name: etc-storage
+        persistentVolumeClaim:
+          claimName: {{ .Values.persistence.pvcname }}
+    {{- end }}  
+
+
+    {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{ toYaml . | indent 8 | trim }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{ toYaml . | indent 8 | trim }}
+    {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{ toYaml . | indent 8 | trim }}
+    {{- end }}

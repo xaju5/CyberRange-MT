@@ -31,16 +31,20 @@ public class FormController extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    //Returns the answers of all users
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ProgramLogic pl = new ProgramLogic();
 		String [][] arraytext = pl.readCSV();
 		int csvArrayLenght = pl.getCsvArrayLenght();
-		reviewResponse(response, new ReportView(),arraytext,csvArrayLenght);
+		int csvLineLength = pl.getCsvLineLength();
+		reportResponse(response, new ReportView(),arraytext,csvArrayLenght,csvLineLength);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	
+	//Checks answers and returns the results of that form
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String flag1u = request.getParameter("flag1u");
@@ -72,14 +76,14 @@ public class FormController extends HttpServlet {
 		}
 	}
 	
-	private void reviewResponse(HttpServletResponse response, ReportView view,String[][] arraytext,int csvArrayLenght) {
+	private void reportResponse(HttpServletResponse response, ReportView view,String[][] arraytext,int csvArrayLenght,int csvLineLength) {
 	
 		response.setContentType("text/html");
 		PrintWriter out;
 		
 		try {
 			out = response.getWriter();
-			view.print(out, arraytext, csvArrayLenght);
+			view.print(out, arraytext, csvArrayLenght,csvLineLength);
 			out.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
