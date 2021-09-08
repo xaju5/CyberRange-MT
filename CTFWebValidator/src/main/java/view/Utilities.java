@@ -92,11 +92,8 @@ public static String headButtons(int numValues, String [] values, String [] href
 		str.append("<h2>");
 		str.append(title);
 		str.append("<br><strong class=\"black\">");
-		str.append(subtitle);
+		str.append(subtitle + text);
 		str.append("</strong></h2>\n");
-		str.append("<p>");
-		str.append(text);
-		str.append("</p>\n");
 		str.append("</div></div></div></div>\n");
 		return str.toString();	
 	}

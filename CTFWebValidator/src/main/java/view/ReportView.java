@@ -6,7 +6,7 @@ public class ReportView implements View {
 
 	public void print(PrintWriter pw, String[][] arraytext,int csvArrayLenght,int csvLineLength) {
 
-		String values[] = {"Back to Test"};
+		String values[] = {"Go back to the Test"};
 		String href[] = {"validation.html"};
 		int numValues = 1;
 		
