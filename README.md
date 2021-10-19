@@ -1,6 +1,8 @@
 
 This repository is a compilation of the software developed for my Master Thesis in Telecommunications Technology.
 
+It is about a cyber-range that deploys a *Capture The Flag* game to test the cybersecurity of Kubernetes, Openstack and Open Source Mano.
+
 ### osm-packages
 
 A collection of Virtualized Network Functions (VNF) and Network Services (NS) descriptors for Open Source Mano (OSM). Some of the NS use a Juju charm which are fully implemented with Python.
